@@ -17,6 +17,36 @@
       "precioPlatillo": "12",
       "categoria": "ensalada",
       "id": 3
+    },
+    {
+      "nombrePlatillo": "Choripan",
+      "precioPlatillo": "20",
+      "categoria": "cortes",
+      "id": 4
+    },
+    {
+      "nombrePlatillo": "asdasd",
+      "precioPlatillo": "123",
+      "categoria": "bebida",
+      "id": 5
+    },
+    {
+      "nombrePlatillo": "asdasd",
+      "precioPlatillo": "123",
+      "categoria": "bebida",
+      "id": 6
+    },
+    {
+      "nombrePlatillo": "dasda",
+      "precioPlatillo": "213",
+      "categoria": "postre",
+      "id": 7
+    },
+    {
+      "nombrePlatillo": "asdasdasdasd",
+      "precioPlatillo": "1234",
+      "categoria": "bebida",
+      "id": 8
     }
   ]
 }
