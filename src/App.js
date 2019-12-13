@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
+
 import Productos from './components/Productos';
 import EditarProducto from './components/EditarProducto';
 import AgregarProducto from './components/AgregarProducto';
@@ -8,6 +10,22 @@ import Header from './components/Header';
 
 
 function App() {
+
+  const [productos, guardarProductos] = useState([]);
+
+  useEffect(() => {
+      const consultarApi = async () => {
+        //consultar la api de json-server
+        const resultado = await axios.get('http://localhost:4000/restaurant');
+        guardarProductos(resultado.data);
+      }
+      consultarApi();
+  }, []);
+
+
+
+
+
   return (
       <Router>
           <Header />
