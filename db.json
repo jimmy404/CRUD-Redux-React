@@ -47,6 +47,12 @@
       "precioPlatillo": "1234",
       "categoria": "bebida",
       "id": 8
+    },
+    {
+      "nombrePlatillo": "Ensalada",
+      "precioPlatillo": "23",
+      "categoria": "ensalada",
+      "id": 9
     }
   ]
 }

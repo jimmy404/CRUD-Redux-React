@@ -4,7 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { withRouter } from 'react-router-dom';
 
-function AgregarProducto({history}) {
+function AgregarProducto({history, guardarRecargarProductos}) {
 
     //state
     const [ nombrePlatillo, guardarNombre ] = useState('');
@@ -51,6 +51,7 @@ function AgregarProducto({history}) {
         }
 
 // redirigir al usuario - no importa si se crea o no
+            guardarRecargarProductos(true);
             history.push('/productos');
     }
 
