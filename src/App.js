@@ -11,7 +11,7 @@ function App() {
   return (
       <Router>
           <Header />
-          <main className="container mt-5">
+            <main className="container mt-5">
         <Switch>
           <Route exact path="/nuevo-producto" component={AgregarProducto} />
           <Route exact path="/productos" component={Productos} />
