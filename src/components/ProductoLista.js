@@ -15,7 +15,6 @@ function ProductoLista({producto}) {
             align-items-center">
             <p>
                 {producto.nombrePlatillo}
-                <p ></p>
                 <span className="font-weigth-bold">
                     ${producto.precioPlatillo} {' '}
                 </span>
