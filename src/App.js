@@ -55,7 +55,19 @@ function App() {
               />
           )}/>
           <Route exact path="/productos/:id" component={Producto} />
-          <Route exact path="/productos/editar/:id" component={EditarProducto} />
+          <Route exact path="/productos/editar/:id" render={props => {
+            //tomar el ID del producto
+              const idProducto = parseInt(props.match.params.id);
+
+              //El producto que se pasa al state
+              const producto = productos.filter(producto => producto.id === idProducto);
+
+              return(
+                <EditarProducto
+                producto={producto[0]}
+                />
+              )
+          }} />
         </Switch>
         </main>
         <p className="mt-4 p2 text-center">Todos los derechos reservados</p>
