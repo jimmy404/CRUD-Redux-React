@@ -53,6 +53,12 @@
       "precioPlatillo": "23",
       "categoria": "ensalada",
       "id": 9
+    },
+    {
+      "nombrePlatillo": "asd",
+      "precioPlatillo": "123",
+      "categoria": "bebida",
+      "id": 10
     }
   ]
 }
