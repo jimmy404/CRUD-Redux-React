@@ -1,7 +1,14 @@
 import React, { useState, useRef} from 'react';
 import Error from './Error';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { withRouter } from 'react-router-dom';
 
-function EditarProducto(producto) {
+function EditarProducto(props) {
+
+    //destructuring de props
+    const {history, producto, guardarRecargarProductos} = props;
+
 
     //generar los refs
     const precioPlatilloRef = useRef('');
@@ -10,19 +17,44 @@ function EditarProducto(producto) {
     const [ error, guardarError ] = useState(false);
     const [ categoria, guardarCategoria ] = useState('');
 
-    const editarProducto = e => {
+    const editarProducto = async e => {
         e.preventDefault();
         //revisar si cambio la categoria de lo contrario asignar el mismo valor
         let categoriaPlatillo = (categoria === '') ? producto.categoria : categoria;
         console.log(categoriaPlatillo);
+
         //Obtener los valores del formulario
+
         const editarPlatillo = {
             precioPlatillo : precioPlatilloRef.current.value,
             nombrePlatillo : nombrePlatilloRef.current.value,
             categoria : categoriaPlatillo
         }
-        //Enviar el request
 
+        //Enviar el request
+        const url = `http://localhost:4000/restaurant/${producto.id}`;
+
+        try {
+            const resultado = await axios.put(url, editarPlatillo);
+
+            if(resultado.status === 200){
+                Swal.fire(
+                    'Producto Editado',
+                    'El producto se Edito correctamente',
+                    'success'
+                )
+            }
+        } catch (error) {
+            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hubo un error, vuelve a intentarlo'
+            })
+        }
+        //redirigir al usuario
+        guardarRecargarProductos(true);
+        history.push('/productos');
     }
     const leerValorRadio = e => {
         guardarCategoria(e.target.value)
@@ -127,4 +159,4 @@ function EditarProducto(producto) {
         );
 }
 
-export default EditarProducto;
+export default withRouter(EditarProducto);
