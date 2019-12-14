@@ -11,6 +11,18 @@ function EditarProducto(producto) {
     const [ categoria, guardarCategoria ] = useState('');
 
     const editarProducto = e => {
+        e.preventDefault();
+        //revisar si cambio la categoria de lo contrario asignar el mismo valor
+        let categoriaPlatillo = (categoria === '') ? producto.categoria : categoria;
+        console.log(categoriaPlatillo);
+        //Obtener los valores del formulario
+        const editarPlatillo = {
+            precioPlatillo : precioPlatilloRef.current.value,
+            nombrePlatillo : nombrePlatilloRef.current.value,
+            categoria : categoriaPlatillo
+        }
+        //Enviar el request
+
     }
     const leerValorRadio = e => {
         guardarCategoria(e.target.value)
