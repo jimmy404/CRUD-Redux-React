@@ -3,7 +3,7 @@
     {
       "precioPlatillo": "200",
       "nombrePlatillo": "Cheescake",
-      "categoria": "postres",
+      "categoria": "postre",
       "id": 1
     },
     {
@@ -59,6 +59,12 @@
       "precioPlatillo": "123",
       "categoria": "bebida",
       "id": 10
+    },
+    {
+      "nombrePlatillo": "qweqweasdsa",
+      "precioPlatillo": "1",
+      "categoria": "cortes",
+      "id": 11
     }
   ]
 }
