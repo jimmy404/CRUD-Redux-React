@@ -61,7 +61,6 @@ function AgregarProducto({history, guardarRecargarProductos}) {
             <h1 className="text-center">Agregar Nuevo Producto</h1>
 
         {(error) ? <Error mensaje='Todos los campos son obligatorios' /> : null}
-
             <form
                 className="mt-5"
                 onSubmit={AgregarProducto}
