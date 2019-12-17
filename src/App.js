@@ -22,7 +22,6 @@ function App() {
           guardarProductos(resultado.data);
         }
         consultarApi();
-
         //cambiar a false la recarga de los productos
         guardarRecargarProductos(false);
       }
