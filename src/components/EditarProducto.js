@@ -70,6 +70,7 @@ function EditarProducto(props) {
         guardarCategoria(e.target.value)
     }
 
+    
     return (
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Editar Producto</h1>
