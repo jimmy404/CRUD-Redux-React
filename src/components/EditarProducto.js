@@ -41,7 +41,6 @@ function EditarProducto(props) {
             nombrePlatillo : nuevoNombrePlatillo,
             categoria : categoriaPlatillo
         }
-
         //Enviar el request
         const url = `http://localhost:4000/restaurant/${producto.id}`;
 
