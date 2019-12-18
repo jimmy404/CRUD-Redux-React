@@ -28,7 +28,6 @@ function App() {
       }
   }, [recargarProductos]);
 
-
   return (
       <Router>
           <Header />
