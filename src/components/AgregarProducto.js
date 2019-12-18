@@ -55,7 +55,6 @@ function AgregarProducto({history, guardarRecargarProductos}) {
             history.push('/productos');
     }
 
-
     return (
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
