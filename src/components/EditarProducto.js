@@ -166,8 +166,7 @@ function EditarProducto(props) {
                 <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Editar Producto" />
             </form>
         </div>
-
-        );
+    );
 }
 
 export default withRouter(EditarProducto);
