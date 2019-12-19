@@ -15,6 +15,7 @@ function App() {
   const [productos, guardarProductos] = useState([]);
   const [recargarProductos, guardarRecargarProductos ] = useState(true);
 
+
   useEffect(() => {
       if(recargarProductos){
         const consultarApi = async () => {
