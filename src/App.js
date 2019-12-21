@@ -37,6 +37,7 @@ function App() {
           <Route exact path="/productos" render={() => (
             <Productos
                 productos={productos}
+                guardarRecargarProductos={guardarRecargarProductos}
               />
           ) }
           />
