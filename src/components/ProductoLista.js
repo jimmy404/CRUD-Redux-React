@@ -6,25 +6,32 @@ import Swal from 'sweetalert2';
 
 function ProductoLista({producto}) {
 
-    const eliminarProducto = id => {
+    const eliminarProducto = async id => {
         console.log('eliminando',id);
 
         //TODO: Eliminar los registros
 Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    title: '¿Estas seguro?',
+    text: "Un Platillo eliminado no se puede recuperar",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-}).then((result) => {
+    confirmButtonText: 'Si, Eliminar',
+    cancelButtonText: 'Cancelar'
+}).then(async(result) => {
     if (result.value) {
-    Swal.fire(
-    'Deleted!',
-    'Your file has been deleted.',
-    'success'
-        )
+
+        const url = `http://localhost:4000/restaurant/${id}`;
+        const resultado = await axios.delete(url);
+        if(resultado.status === 200){
+            Swal.fire(
+                'Eliminado',
+                'El producto se ha eliminado',
+                'success'
+            )
+        }
+
     }
 })
 
