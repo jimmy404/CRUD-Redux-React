@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-function ProductoLista({producto}) {
+function ProductoLista({producto, guardarRecargarProductos}) {
 
     const eliminarProducto = async id => {
         console.log('eliminando',id);
@@ -20,9 +20,10 @@ Swal.fire({
     confirmButtonText: 'Si, Eliminar',
     cancelButtonText: 'Cancelar'
 }).then(async(result) => {
-    if (result.value) {
 
-        const url = `http://localhost:4000/restaurant/${id}`;
+    if (result.value) {
+        try {
+            const url = `http://localhost:4000/restaurant/${id}`;
         const resultado = await axios.delete(url);
         if(resultado.status === 200){
             Swal.fire(
@@ -30,12 +31,20 @@ Swal.fire({
                 'El producto se ha eliminado',
                 'success'
             )
+        //Consultar la Api
+        guardarRecargarProductos(true)
         }
-
+        } catch (error) {
+        console.log(error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Hubo un error, vuelve a intentarlo'
+        })
+        }
     }
 })
-
-    }
+}
 
 
 
